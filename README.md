@@ -48,6 +48,14 @@ This demo is based on
 - https://moveit.picknik.ai/main/doc/tutorials/pick_and_place_with_moveit_task_constructor/pick_and_place_with_moveit_task_constructor.html
 - https://github.com/ros-planning/moveit2_tutorials/tree/humble/doc/tutorials/pick_and_place_with_moveit_task_constructor
 
-```bash
+In one docker terminal, run the demo launch file:
 
+```bash
+ros2 launch mtc_kinova_demo mtc_demo_launch.py
+```
+
+In another docker terminal start the MTC node:
+
+```bash
+ros2 launch mtc_kinova_demo pick_and_place_mtc_tutorial_launch.py
 ```

@@ -55,9 +55,9 @@ RUN cd /ros2_ws/src \
     && git clone -b humble --single-branch https://github.com/ros-planning/moveit_task_constructor.git
 
 # copy ROS packages into container
-# COPY mtc_kinova_demo /ros2_ws/src/mtc_kinova_demo
-# COPY kinova_gen3_6dof_robotiq_2f_85_description /ros2_ws/src/kinova_gen3_6dof_robotiq_2f_85_description
-# COPY kinova_gen3_6dof_robotiq_2f_85_description_moveit_config /ros2_ws/src/kinova_gen3_6dof_robotiq_2f_85_description_moveit_config
+COPY mtc_kinova_demo /ros2_ws/src/mtc_kinova_demo
+COPY kinova_gen3_6dof_robotiq_2f_85_description /ros2_ws/src/kinova_gen3_6dof_robotiq_2f_85_description
+COPY kinova_gen3_6dof_robotiq_2f_85_description_moveit_config /ros2_ws/src/kinova_gen3_6dof_robotiq_2f_85_description_moveit_config
 
 RUN source /opt/ros/$ROS_DISTRO/setup.bash && colcon build --symlink-install
 

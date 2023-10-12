@@ -4,14 +4,12 @@ from moveit_configs_utils import MoveItConfigsBuilder
 
 
 def generate_launch_description():
-    moveit_config = MoveItConfigsBuilder("moveit_resources_panda").to_dict()
+    moveit_config = MoveItConfigsBuilder("kinova_gen3_6dof_robotiq_2f_85_description").to_dict()
 
     # MTC Demo node
     pick_place_demo = Node(
-        # package="mtc_tutorial",
-        # executable="mtc_node",
-        package="moveit2_tutorials",
-        executable="mtc_tutorial",
+        package="mtc_kinova_demo",
+        executable="pick_and_place_mtc_tutorial",
         output="screen",
         parameters=[
             moveit_config,
