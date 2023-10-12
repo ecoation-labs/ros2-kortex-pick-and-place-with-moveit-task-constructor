@@ -1,0 +1,25 @@
+moveit_setup_assistant_config:
+  urdf:
+    package: kinova_gen3_6dof_robotiq_2f_85_description
+    relative_path: urdf/kinova.urdf.xacro
+  srdf:
+    relative_path: config/kinova_arm.srdf
+  package_settings:
+    author_name: Patrick Wspanialy
+    author_email: patrick.wspanialy@ecoation.com
+    generated_timestamp: 1697126973
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity
+  modified_urdf:
+    xacros:
+      - control_xacro
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity

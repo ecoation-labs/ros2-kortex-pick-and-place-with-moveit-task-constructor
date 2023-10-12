@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="kinova_arm">
+    <xacro:arg name="initial_positions_file" default="initial_positions.yaml" />
+
+    <!-- Import kinova_arm urdf file -->
+    <xacro:include filename="$(find kinova_gen3_6dof_robotiq_2f_85_description)/urdf/kinova.urdf.xacro" />
+
+    <!-- Import control_xacro -->
+    <xacro:include filename="kinova_arm.ros2_control.xacro" />
+
+
+    <xacro:kinova_arm_ros2_control name="FakeSystem" initial_positions_file="$(arg initial_positions_file)"/>
+
+</robot>

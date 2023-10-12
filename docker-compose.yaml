@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+
+  ros2-kortex-pick-and-place-with-moveit-task-constructor:
+    build:
+      context: .
+      dockerfile: ./dockerfile
+    container_name: ros2-kortex-pick-and-place-with-moveit-task-constructor
+    restart: always
+    environment:
+      - DISPLAY=$DISPLAY
+      - QT_X11_NO_MITSHM=1
+      - RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+      - ROS_DOMAIN_ID=30
+
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - $XAUTHORITY:/root/.Xauthority
+      - ./kinova_gen3_6dof_robotiq_2f_85_description:/ros2_ws/src/kinova_gen3_6dof_robotiq_2f_85_description
+      - ./kinova_gen3_6dof_robotiq_2f_85_description_moveit_config:/ros2_ws/src/kinova_gen3_6dof_robotiq_2f_85_description_moveit_config
+      - ./mtc_kinova_demo:/ros2_ws/src/mtc_kinova_demo
+    stdin_open: true
+    tty: true
+    command: sleep infinity
